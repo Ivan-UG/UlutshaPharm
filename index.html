@@ -2,121 +2,168 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>UlutshaPharm</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    :root {
+      --blue: #003366;
+      --gold: #d4af37;
+      --beige: #f5f5dc;
+      --white: #ffffff;
+    }
+
+    * {
       margin: 0;
       padding: 0;
-      background-color: #f5f5dc; /* beige background */
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--beige);
       color: #333;
+      line-height: 1.6;
     }
+
     header {
-      background-color: #003366; /* deep blue */
-      color: gold;
-      padding: 20px;
-      text-align: center;
-    }
-    nav {
-      background-color: #002244; /* dark navy */
+      background-color: var(--blue);
+      color: var(--white);
+      padding: 1rem 2rem;
       display: flex;
-      justify-content: center;
-      padding: 10px;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
     }
+
+    header img {
+      height: 50px;
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+    }
+
     nav a {
-      color: gold;
-      margin: 0 15px;
+      color: var(--gold);
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
     }
+
     nav a:hover {
       text-decoration: underline;
     }
-    section {
-      padding: 40px 20px;
-      max-width: 900px;
+
+    .hero {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: linear-gradient(to right, var(--blue), #005ea2);
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+
+    .section {
+      padding: 3rem 2rem;
+      max-width: 1000px;
       margin: auto;
     }
-    .highlight {
-      background-color: #fff8dc;
-      border-left: 5px solid gold;
-      padding: 20px;
-      margin: 30px 0;
+
+    .section h2 {
+      color: var(--blue);
+      margin-bottom: 1rem;
     }
-    .team {
+
+    .team-grid {
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 1.5rem;
       justify-content: center;
     }
-    .team-member {
-      background-color: white;
-      border: 1px solid #ccc;
+
+    .card {
+      background: white;
       border-radius: 10px;
-      padding: 20px;
-      width: 200px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      width: 220px;
       text-align: center;
     }
+
     footer {
-      background-color: #003366;
+      background-color: var(--blue);
       color: white;
       text-align: center;
-      padding: 20px;
+      padding: 2rem 1rem;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>UlutshaPharm</h1>
-    <p>Empowering Health Through Innovation</p>
+    <img src="logo.png" alt="UlutshaPharm Logo">
+    <nav>
+      <a href="#story">Our Story</a>
+      <a href="#products">Products</a>
+      <a href="#team">Team</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
-  <nav>
-    <a href="#story">Our Story</a>
-    <a href="#products">Products</a>
-    <a href="#team">Meet the Team</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <section id="story">
-    <h2>Our Story</h2>
-    <div class="highlight">
-      <p>Founded with a vision to revolutionize healthcare in Africa, UlutshaPharm combines cutting-edge pharmaceutical research with a passion for community well-being. Our mission is to create accessible, high-quality medical solutions that truly make a difference.</p>
-    </div>
+  <section class="hero">
+    <h1>Empowering Health Through Innovation</h1>
+    <p>UlutshaPharm is shaping the future of healthcare across Africa</p>
   </section>
 
-  <section id="products">
+  <section id="story" class="section">
+    <h2>Our Story</h2>
+    <p>UlutshaPharm was founded to create accessible, affordable, and high-quality pharmaceutical products for underserved communities. We believe in science, collaboration, and community health impact.</p>
+  </section>
+
+  <section id="products" class="section">
     <h2>Our Products</h2>
-    <p>We provide a growing portfolio of trusted, effective medications across therapeutic areas including:</p>
     <ul>
-      <li>Antibiotics</li>
-      <li>Chronic Disease Management (e.g. diabetes, hypertension)</li>
-      <li>Pain Management</li>
-      <li>Vitamins and Supplements</li>
+      <li>Essential Medicines</li>
+      <li>Chronic Disease Treatments</li>
+      <li>OTC Health Products</li>
+      <li>Nutritional Supplements</li>
     </ul>
   </section>
 
-  <section id="team">
+  <section id="team" class="section">
     <h2>Meet the Team</h2>
-    <div class="team">
-      <div class="team-member">
+    <div class="team-grid">
+      <div class="card">
         <h3>Dr. Zanele Mokoena</h3>
         <p>CEO & Founder</p>
       </div>
-      <div class="team-member">
+      <div class="card">
         <h3>Thabo Ndlovu</h3>
         <p>Head of Research</p>
       </div>
-      <div class="team-member">
+      <div class="card">
         <h3>Nomvula Dlamini</h3>
         <p>Operations Director</p>
       </div>
     </div>
   </section>
 
-  <section id="contact">
+  <section id="contact" class="section">
     <h2>Contact Us</h2>
     <p>Email: contact@ulutshapharm.com</p>
     <p>Phone: +27 123 456 789</p>
